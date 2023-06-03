@@ -1,0 +1,39 @@
+{
+    "manifest_version": 3,
+    "name": "Password Manager",
+    "version": "1.0",
+    "permissions": [
+      "tabs",
+      "storage"
+    ],
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/pop.jpeg",
+        "48": "images/pop.jpeg",
+        "128": "images/pop.jpeg"
+      }
+    },
+    "options_ui": {
+      "page": "options.html",
+      "open_in_tab": true
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "icons": {
+      "16": "images/pop.jpeg",
+      "48": "images/pop.jpeg",
+      "128": "images/pop.jpeg"
+    },
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["content.js"]
+        }
+      ]
+  }
+  
